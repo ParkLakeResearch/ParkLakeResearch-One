@@ -573,7 +573,7 @@
     <div class="nav-links">
       <a href="#" onclick="showView('home'); return false;" id="nav-home" class="active">Home</a>
       <a href="#" onclick="showView('about'); return false;" id="nav-about">About</a>
-      <a href="#" onclick="toggleCompose(); return false;">+ Write</a>
+      <a href="#" onclick="promptWrite(); return false;">+ Write</a>
     </div>
     <div class="nav-date" id="dateline"></div>
   </div>
@@ -787,6 +787,13 @@
     document.getElementById('ap-meta').textContent = `${p.date}  ·  ${readTime(p.body)} min read`;
     document.getElementById('ap-body').innerHTML = p.body.split('\n').filter(Boolean).map(para => `<p>${para}</p>`).join('');
     showView('article');
+  }
+
+  function promptWrite() {
+    const pw = prompt('Enter password to write a post:');
+    if (pw === 'PLR') {
+      toggleCompose();
+    }
   }
 
   function toggleCompose() {
