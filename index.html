@@ -16,6 +16,7 @@
       --ink: #1a1a1a;
       --mid: #888;
       --rule: #d8d5d0;
+      --red: #c0392b;
     }
 
     html { font-size: 16px; scroll-behavior: smooth; }
@@ -37,6 +38,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 2rem 3rem;
+      background: var(--off-white);
     }
 
     nav .nav-logo {
@@ -250,6 +252,261 @@
       color: var(--mid);
     }
 
+    /* ── INSIGHTS ── */
+    .insights {
+      border-top: 1px solid var(--rule);
+      padding: 7rem 3rem 8rem;
+    }
+
+    .insights-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    .insights-header .section-num {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .insights-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .insights-header .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--ink);
+      align-self: end;
+    }
+
+    /* Post list */
+    .post-list { display: flex; flex-direction: column; }
+
+    .post-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .post-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .post-meta { padding-top: 0.2rem; }
+
+    .post-date {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.4rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .post-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-body p { margin-bottom: 1.2rem; }
+    .post-body p:last-child { margin-bottom: 0; }
+
+    .no-posts {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--mid);
+      padding: 3rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── ADMIN PANEL ── */
+    .admin-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--off-white);
+      overflow-y: auto;
+      padding: 4rem 3rem;
+    }
+
+    .admin-overlay.active { display: block; }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .admin-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: var(--ink);
+    }
+
+    .admin-close {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.2s;
+    }
+
+    .admin-close:hover { color: var(--ink); }
+
+    .admin-login { max-width: 400px; }
+
+    .admin-login p {
+      font-size: 0.75rem;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .field-group { margin-bottom: 1.5rem; }
+
+    .field-group label {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .field-group input,
+    .field-group textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.6rem 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .field-group input:focus,
+    .field-group textarea:focus { border-bottom-color: var(--ink); }
+
+    .field-group textarea { min-height: 300px; line-height: 1.7; }
+
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      background: var(--ink);
+      border: none;
+      padding: 0.85rem 2rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.75; }
+
+    .admin-error {
+      color: var(--red);
+      font-size: 0.7rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    /* Post manager */
+    .post-manager { margin-top: 4rem; }
+
+    .post-manager h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .new-post-form { max-width: 680px; margin-bottom: 4rem; }
+
+    .managed-post {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--rule);
+      gap: 2rem;
+    }
+
+    .managed-post:last-child { border-bottom: 1px solid var(--rule); }
+
+    .managed-post-info .mp-date {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .managed-post-info .mp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .btn-delete {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-delete:hover { color: var(--red); }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
@@ -265,6 +522,20 @@
       text-transform: uppercase;
       color: var(--mid);
     }
+
+    footer .admin-link {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rule);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      transition: color 0.3s;
+    }
+
+    footer .admin-link:hover { color: var(--mid); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -284,7 +555,7 @@
       .hero-side-left .tagline { max-width: 100%; }
       .logo-wrap { max-width: 300px; margin: 0 auto; }
 
-      .about {
+      .about, .insights-header {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 4rem 2rem 5rem;
@@ -306,9 +577,18 @@
       .focus-item:last-child { border-bottom: none; }
       .focus-item:not(:first-child) { padding-left: 0; }
 
+      .insights { padding: 4rem 2rem 5rem; }
+
+      .post-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2.5rem 0;
+      }
+
       nav { padding: 1.5rem 2rem; }
       .rule { width: calc(100% - 4rem); margin: 0 2rem; }
       footer { padding: 2rem; flex-direction: column; gap: 0.75rem; text-align: center; }
+      .admin-overlay { padding: 2rem; }
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -330,6 +610,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#focus">Focus</a></li>
+      <li><a href="#insights">Insights</a></li>
     </ul>
   </nav>
 
@@ -339,13 +620,11 @@
       <span class="eyebrow">Est. Space Coast, FL</span>
       <p class="tagline">Independent real estate research & market intelligence.</p>
     </div>
-
     <div class="hero-center">
       <div class="logo-wrap">
         <img src="logo.png" alt="Park Lake Research" />
       </div>
     </div>
-
     <div class="hero-side-right">
       <span class="location">
         Brevard County<br>
@@ -389,10 +668,174 @@
     </div>
   </div>
 
+  <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="insights-header">
+      <div>
+        <span class="section-num">03</span>
+        <h2>Insights</h2>
+      </div>
+      <p class="intro">Original research and market commentary on the Space Coast's commercial real estate landscape.</p>
+    </div>
+    <div class="post-list" id="post-list">
+      <!-- Posts injected by JS -->
+    </div>
+  </section>
+
   <footer>
     <span>Park Lake Research — Brevard County, FL</span>
+    <button class="admin-link" onclick="openAdmin()">Admin</button>
     <span>&copy; 2026</span>
   </footer>
+
+  <!-- ADMIN OVERLAY -->
+  <div class="admin-overlay" id="admin-overlay">
+    <div class="admin-header">
+      <h2>Admin</h2>
+      <button class="admin-close" onclick="closeAdmin()">Close</button>
+    </div>
+
+    <!-- Login -->
+    <div class="admin-login" id="admin-login">
+      <p>Enter your password to manage insights.</p>
+      <div class="field-group">
+        <label>Password</label>
+        <input type="password" id="admin-password" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkPassword()" />
+      </div>
+      <button class="btn-primary" onclick="checkPassword()">Enter</button>
+      <p class="admin-error" id="admin-error">Incorrect password.</p>
+    </div>
+
+    <!-- Post Manager (shown after login) -->
+    <div class="post-manager" id="post-manager" style="display:none;">
+
+      <h3>New Insight</h3>
+      <div class="new-post-form">
+        <div class="field-group">
+          <label>Title</label>
+          <input type="text" id="new-title" placeholder="Post title" />
+        </div>
+        <div class="field-group">
+          <label>Body</label>
+          <textarea id="new-body" placeholder="Write your insight here. Separate paragraphs with a blank line."></textarea>
+        </div>
+        <button class="btn-primary" onclick="publishPost()">Publish</button>
+      </div>
+
+      <h3>Published</h3>
+      <div id="managed-list"></div>
+
+    </div>
+  </div>
+
+  <script>
+    // ── CONFIG — change this password ──
+    const ADMIN_PASSWORD = 'grissom2024';
+
+    // ── STORAGE ──
+    function getPosts() {
+      try { return JSON.parse(localStorage.getItem('plr_posts') || '[]'); }
+      catch { return []; }
+    }
+
+    function savePosts(posts) {
+      localStorage.setItem('plr_posts', JSON.stringify(posts));
+    }
+
+    // ── RENDER PUBLIC POSTS ──
+    function renderPosts() {
+      const posts = getPosts();
+      const list = document.getElementById('post-list');
+      if (!posts.length) {
+        list.innerHTML = '<p class="no-posts">No insights published yet.</p>';
+        return;
+      }
+      list.innerHTML = posts.map((p, i) => `
+        <article class="post-item">
+          <div class="post-meta">
+            <span class="post-date">${p.date}</span>
+            <h3 class="post-title">${p.title}</h3>
+          </div>
+          <div class="post-body">
+            ${p.body.split(/\n\n+/).map(para => `<p>${para.trim()}</p>`).join('')}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // ── RENDER ADMIN LIST ──
+    function renderManaged() {
+      const posts = getPosts();
+      const el = document.getElementById('managed-list');
+      if (!posts.length) {
+        el.innerHTML = '<p style="font-size:0.75rem;color:var(--mid);padding:1rem 0;">No posts yet.</p>';
+        return;
+      }
+      el.innerHTML = posts.map((p, i) => `
+        <div class="managed-post">
+          <div class="managed-post-info">
+            <span class="mp-date">${p.date}</span>
+            <span class="mp-title">${p.title}</span>
+          </div>
+          <button class="btn-delete" onclick="deletePost(${i})">Delete</button>
+        </div>
+      `).join('');
+    }
+
+    // ── PUBLISH ──
+    function publishPost() {
+      const title = document.getElementById('new-title').value.trim();
+      const body = document.getElementById('new-body').value.trim();
+      if (!title || !body) return;
+      const posts = getPosts();
+      const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      posts.unshift({ title, body, date });
+      savePosts(posts);
+      document.getElementById('new-title').value = '';
+      document.getElementById('new-body').value = '';
+      renderPosts();
+      renderManaged();
+    }
+
+    // ── DELETE ──
+    function deletePost(i) {
+      if (!confirm('Delete this post?')) return;
+      const posts = getPosts();
+      posts.splice(i, 1);
+      savePosts(posts);
+      renderPosts();
+      renderManaged();
+    }
+
+    // ── ADMIN LOGIN ──
+    function checkPassword() {
+      const val = document.getElementById('admin-password').value;
+      if (val === ADMIN_PASSWORD) {
+        document.getElementById('admin-login').style.display = 'none';
+        document.getElementById('post-manager').style.display = 'block';
+        renderManaged();
+      } else {
+        document.getElementById('admin-error').style.display = 'block';
+      }
+    }
+
+    function openAdmin() {
+      document.getElementById('admin-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAdmin() {
+      document.getElementById('admin-overlay').classList.remove('active');
+      document.body.style.overflow = '';
+      document.getElementById('admin-password').value = '';
+      document.getElementById('admin-error').style.display = 'none';
+      document.getElementById('admin-login').style.display = 'block';
+      document.getElementById('post-manager').style.display = 'none';
+    }
+
+    // ── INIT ──
+    renderPosts();
+  </script>
 
 </body>
 </html>
