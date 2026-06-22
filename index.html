@@ -37,7 +37,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 2rem 3rem;
-      mix-blend-mode: multiply;
     }
 
     nav .nav-logo {
@@ -75,9 +74,8 @@
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 2fr 1fr;
-      grid-template-rows: 1fr;
       align-items: center;
-      padding: 6rem 3rem 4rem;
+      padding: 5rem 3rem 3rem;
       gap: 2rem;
     }
 
@@ -86,11 +84,10 @@
       flex-direction: column;
       justify-content: flex-end;
       align-self: end;
-      padding-bottom: 4rem;
+      padding-bottom: 3rem;
     }
 
     .hero-side-left .eyebrow {
-      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -114,10 +111,19 @@
       justify-content: center;
     }
 
-    .hero-center img {
+    /* White background behind image so multiply works correctly */
+    .logo-wrap {
+      background: #ffffff;
+      display: inline-flex;
       width: 100%;
-      max-width: 560px;
+      max-width: 420px;
+    }
+
+    .logo-wrap img {
+      width: 100%;
       height: auto;
+      max-height: 50vh;
+      object-fit: contain;
       mix-blend-mode: multiply;
       display: block;
     }
@@ -127,13 +133,12 @@
       flex-direction: column;
       justify-content: flex-end;
       align-self: end;
-      padding-bottom: 4rem;
+      padding-bottom: 3rem;
       align-items: flex-end;
       text-align: right;
     }
 
     .hero-side-right .location {
-      font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -164,7 +169,6 @@
     }
 
     .about-label .section-num {
-      font-family: 'Inter', sans-serif;
       font-size: 0.6rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
@@ -226,7 +230,6 @@
     .focus-item:not(:first-child) { padding-left: 2rem; }
 
     .focus-item .f-label {
-      font-family: 'Inter', sans-serif;
       font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -245,8 +248,6 @@
     }
 
     .focus-item p {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
       font-size: 0.75rem;
       line-height: 1.85;
       color: var(--mid);
@@ -262,8 +263,6 @@
     }
 
     footer span {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -274,7 +273,6 @@
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
         min-height: auto;
         padding: 7rem 2rem 4rem;
         text-align: center;
@@ -287,6 +285,7 @@
       }
 
       .hero-side-left .tagline { max-width: 100%; }
+      .logo-wrap { max-width: 300px; margin: 0 auto; }
 
       .about {
         grid-template-columns: 1fr;
@@ -316,9 +315,7 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      .hero-center img {
-        animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
+      .hero-center { animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) both; }
       .hero-side-left, .hero-side-right {
         animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
       }
@@ -347,10 +344,9 @@
     </div>
 
     <div class="hero-center">
-      <img
-        src="IMG_6069.jpg"
-        alt="Park Lake Research"
-      />
+      <div class="logo-wrap">
+        <img src="IMG_6069.jpg" alt="Park Lake Research" />
+      </div>
     </div>
 
     <div class="hero-side-right">
