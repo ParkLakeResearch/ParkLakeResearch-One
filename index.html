@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
   <title>Yellow Tree Research</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Permanent+Marker&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,6 +29,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -70,6 +71,7 @@
 
     nav ul a:hover { opacity: 1; }
 
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -118,16 +120,17 @@
     }
 
     .logo-wrap .wm-line {
-      font-family: 'Permanent Marker', cursive;
+      font-family: Verdana, Geneva, 'DejaVu Sans', Arial, sans-serif;
+      font-weight: 400;
       color: var(--red);
-      line-height: 0.95;
+      line-height: 1.05;
       display: block;
       white-space: nowrap;
     }
 
-    .logo-wrap .wm-line.l1 { font-size: 5.2rem; transform: rotate(-2deg); margin-left: 0.1em; }
-    .logo-wrap .wm-line.l2 { font-size: 4.4rem; transform: rotate(1.5deg) translateX(0.3em); margin-top: -0.05em; }
-    .logo-wrap .wm-line.l3 { font-size: 3.6rem; transform: rotate(-1deg); margin-top: -0.05em; }
+    .logo-wrap .wm-line.l1 { font-size: 4.2rem; }
+    .logo-wrap .wm-line.l2 { font-size: 3.6rem; }
+    .logo-wrap .wm-line.l3 { font-size: 3rem; }
 
     .hero-side-right {
       display: flex;
@@ -147,6 +150,7 @@
       line-height: 2;
     }
 
+    /* ── DIVIDER ── */
     .rule {
       width: calc(100% - 6rem);
       margin: 0 3rem;
@@ -154,6 +158,7 @@
       background: var(--rule);
     }
 
+    /* ── ABOUT ── */
     .about {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -207,6 +212,7 @@
       letter-spacing: 0.02em;
     }
 
+    /* ── FOCUS STRIP ── */
     .focus {
       border-top: 1px solid var(--rule);
       display: grid;
@@ -251,6 +257,7 @@
       color: var(--mid);
     }
 
+    /* ── INSIGHTS ── */
     .insights {
       border-top: 1px solid var(--rule);
       padding: 7rem 3rem 8rem;
@@ -289,6 +296,7 @@
       align-self: end;
     }
 
+    /* Post list */
     .post-list { display: flex; flex-direction: column; }
 
     .post-item {
@@ -340,6 +348,7 @@
       border-top: 1px solid var(--rule);
     }
 
+    /* ── ADMIN PANEL ── */
     .admin-overlay {
       display: none;
       position: fixed;
@@ -446,6 +455,7 @@
       display: none;
     }
 
+    /* Post manager */
     .post-manager { margin-top: 4rem; }
 
     .post-manager h3 {
@@ -502,6 +512,7 @@
 
     .btn-delete:hover { color: var(--red); }
 
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2.5rem 3rem;
@@ -531,6 +542,7 @@
 
     footer .admin-link:hover { color: var(--mid); }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -547,9 +559,9 @@
 
       .hero-side-left .tagline { max-width: 100%; }
       .logo-wrap { align-items: center; margin: 0 auto; }
-      .logo-wrap .wm-line.l1 { font-size: 3rem; }
-      .logo-wrap .wm-line.l2 { font-size: 2.6rem; transform: rotate(1.5deg); margin-left: 0; }
-      .logo-wrap .wm-line.l3 { font-size: 2.1rem; }
+      .logo-wrap .wm-line.l1 { font-size: 2.6rem; }
+      .logo-wrap .wm-line.l2 { font-size: 2.2rem; }
+      .logo-wrap .wm-line.l3 { font-size: 1.9rem; }
 
       .about, .insights-header {
         grid-template-columns: 1fr;
@@ -837,3 +849,4 @@
 
 </body>
 </html>
+
