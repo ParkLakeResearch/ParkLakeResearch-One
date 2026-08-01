@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Park Lake Research</title>
+  <title>Yellow Tree Research</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Permanent+Marker&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,7 +29,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -71,7 +70,6 @@
 
     nav ul a:hover { opacity: 1; }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -114,18 +112,22 @@
     }
 
     .logo-wrap {
-      display: inline-flex;
-      width: 100%;
-      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    .logo-wrap img {
-      width: 100%;
-      height: auto;
-      max-height: 50vh;
-      object-fit: contain;
+    .logo-wrap .wm-line {
+      font-family: 'Permanent Marker', cursive;
+      color: var(--red);
+      line-height: 0.95;
       display: block;
+      white-space: nowrap;
     }
+
+    .logo-wrap .wm-line.l1 { font-size: 5.2rem; transform: rotate(-2deg); margin-left: 0.1em; }
+    .logo-wrap .wm-line.l2 { font-size: 4.4rem; transform: rotate(1.5deg) translateX(0.3em); margin-top: -0.05em; }
+    .logo-wrap .wm-line.l3 { font-size: 3.6rem; transform: rotate(-1deg); margin-top: -0.05em; }
 
     .hero-side-right {
       display: flex;
@@ -145,7 +147,6 @@
       line-height: 2;
     }
 
-    /* ── DIVIDER ── */
     .rule {
       width: calc(100% - 6rem);
       margin: 0 3rem;
@@ -153,7 +154,6 @@
       background: var(--rule);
     }
 
-    /* ── ABOUT ── */
     .about {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -207,7 +207,6 @@
       letter-spacing: 0.02em;
     }
 
-    /* ── FOCUS STRIP ── */
     .focus {
       border-top: 1px solid var(--rule);
       display: grid;
@@ -252,7 +251,6 @@
       color: var(--mid);
     }
 
-    /* ── INSIGHTS ── */
     .insights {
       border-top: 1px solid var(--rule);
       padding: 7rem 3rem 8rem;
@@ -291,7 +289,6 @@
       align-self: end;
     }
 
-    /* Post list */
     .post-list { display: flex; flex-direction: column; }
 
     .post-item {
@@ -343,7 +340,6 @@
       border-top: 1px solid var(--rule);
     }
 
-    /* ── ADMIN PANEL ── */
     .admin-overlay {
       display: none;
       position: fixed;
@@ -450,7 +446,6 @@
       display: none;
     }
 
-    /* Post manager */
     .post-manager { margin-top: 4rem; }
 
     .post-manager h3 {
@@ -507,7 +502,6 @@
 
     .btn-delete:hover { color: var(--red); }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2.5rem 3rem;
@@ -537,7 +531,6 @@
 
     footer .admin-link:hover { color: var(--mid); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
@@ -553,7 +546,10 @@
       }
 
       .hero-side-left .tagline { max-width: 100%; }
-      .logo-wrap { max-width: 300px; margin: 0 auto; }
+      .logo-wrap { align-items: center; margin: 0 auto; }
+      .logo-wrap .wm-line.l1 { font-size: 3rem; }
+      .logo-wrap .wm-line.l2 { font-size: 2.6rem; transform: rotate(1.5deg); margin-left: 0; }
+      .logo-wrap .wm-line.l3 { font-size: 2.1rem; }
 
       .about, .insights-header {
         grid-template-columns: 1fr;
@@ -606,7 +602,7 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="#">PLR</a>
+    <a class="nav-logo" href="#">YTR</a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#focus">Focus</a></li>
@@ -622,7 +618,9 @@
     </div>
     <div class="hero-center">
       <div class="logo-wrap">
-        <img src="logo.png" alt="Park Lake Research" />
+        <span class="wm-line l1">Yellow</span>
+        <span class="wm-line l2">Tree</span>
+        <span class="wm-line l3">Research</span>
       </div>
     </div>
     <div class="hero-side-right">
@@ -640,10 +638,10 @@
   <section class="about" id="about">
     <div class="about-label">
       <span class="section-num">01</span>
-      <h2>About<br>Park Lake<br>Research</h2>
+      <h2>About<br>Yellow Tree<br>Research</h2>
     </div>
     <div class="about-body">
-      <p>Park Lake Research is an independent market research platform focused on commercial real estate dynamics along Florida's Space Coast — one of the most consequential growth corridors in the American Southeast.</p>
+      <p>Yellow Tree Research is an independent market research platform focused on commercial real estate dynamics along Florida's Space Coast — one of the most consequential growth corridors in the American Southeast.</p>
       <p>We publish original analysis on industrial, flex, and land markets, with a practitioner's eye toward supply constraints, aerospace-driven demand, and the economics of ground-up development.</p>
       <p class="sub">Our work draws on primary broker intelligence, site-level underwriting, and direct engagement with the deals shaping Brevard County's built environment. No intermediary. No noise. Just the research.</p>
     </div>
@@ -683,7 +681,7 @@
   </section>
 
   <footer>
-    <span>Park Lake Research — Brevard County, FL</span>
+    <span>Yellow Tree Research — Brevard County, FL</span>
     <button class="admin-link" onclick="openAdmin()">Admin</button>
     <span>&copy; 2026</span>
   </footer>
